@@ -7,6 +7,7 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
 - AWS EC2 instance (Ubuntu)
 - Docker and DockerHub
 - Jenkins (installed locally on Windows)
+- ESlint for testing javascript code and potential issues.
 - Git (version control)
 - GitHub (as the source code repository)
 - LocalTunnel (to expose Jenkins to the internet for GitHub webhook)
@@ -61,7 +62,7 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
    - Credentials were created in Jenkins:
      - DockerHub username and PAT
      - EC2 SSH private key
-     - GitHub PAT
+     - GitHub PAT (PAT expires , so need to update again)
 
 6. **GitHub Webhook Integration**
 
@@ -84,6 +85,7 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
    - A declarative pipeline was created using `bat` steps instead of `sh` since it runs on Windows.
    - The stages include:
      - Cloning the GitHub repository
+     - testing the code using ESlint
      - Building and pushing the Docker image
      - SSH into EC2 and pulling the new image
      - Stopping old container (if any) and running the new one
@@ -134,6 +136,12 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
    - Cause: Tunnel timed out or closed.
    - Solution: Reopen tunnel using the `.bat` script and avoid sleeping or restarting the system.
    - Also keep the terminal open duRing triggering(pushing code changes).
+
+7. ** ESLint not recgnized ScrollReveal and Typed function**
+   - cause: Eslint do not recognised the if the function or variable is used in external file.
+   - Solution: Add the below comment on top of script.js to make Eslint understant it as global.
+   -  /* global Typed, ScrollReveal */
+   
 
 ###  Some Good pracTices I considered:
    - Local Installation:
