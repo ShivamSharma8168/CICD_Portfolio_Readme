@@ -4,8 +4,8 @@ import os
 ec2 = boto3.client('ec2')
 sns = boto3.client('sns')
 
-instance_id = 'enter ec2 instance id' 
-sns_topic_arn = 'paste your arn'      
+instance_id = 'enter ec2 instance id' # Enter your instance id here 
+sns_topic_arn = 'paste your arn'      # Paste your ARN generated in lambda function
 
 def lambda_handler(event, context):
     try:
