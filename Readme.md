@@ -137,9 +137,9 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
    - Solution: Reopen tunnel using the `.bat` script and avoid sleeping or restarting the system.
    - Also keep the terminal open duRing triggering(pushing code changes).
 
-7. ** ESLint not recgnized ScrollReveal and Typed function**
-   - cause: Eslint do not recognised the if the function or variable is used in external file.
-   - Solution: Add the below comment on top of script.js to make Eslint understant it as global.
+7. ** ESLint not recognized ScrollReveal and Typed function**
+   - cause: Eslint do not recognized the if the function or variable is used in external file.
+   - Solution: Add the below comment on top of script.js to make Eslint understand it as global.
    -  /* global Typed, ScrollReveal */
    
 
@@ -153,6 +153,9 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
 
     - Budget and Alarms:
       Setted up budget and alarms on AWS so that I can avoid charges and remain within the free-tier.
+
+    - Lambda function:
+      Python is used to to create a lambda function using boto3, lambda function is triggered by cloudwatch to stop the running EC2 instance after sending email notification.  
 
     - Backup:
      As Jenkins is locally installed, I used a script that backups my jobs and important files to drive.
