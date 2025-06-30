@@ -167,6 +167,15 @@ This document outlines the step-by-step implementation of a complete CI/CD pipel
 
 This project successfully demonstrates a complete CI/CD setup to deploy a portfolio website with real-time GitHub webhook integration, Docker-based deployment on an EC2 instance, and Jenkins automation. Common challenges encountered during this process were resolved with targeted solutions. The system is also equipped with email alerts and regular backups, making it production-ready and reliable for continuous deployment workflows.
 
+# Live Links
+- Live from EC2(project):
+   http://35.175.145.107/
+
+- Alternate Portfolio Link:
+   https://shivam8168.netlify.app/  
+
+- Project Readme (Also available on portfolio)
+   https://github.com/ShivamSharma8168/CICD_Portfolio_Readme   
 
 ## Note
 
